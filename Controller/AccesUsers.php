@@ -18,11 +18,10 @@ $searchUser = $con->getUser($usuario,$password);
 //echo $searchUser;
 foreach ($searchUser as $user) {
 $tipo = $user['tipo'];
-echo $tipo;
 $id_usuario = $user['id_usu'];
-$id_usuario = $user['nombre'];
-$id_usuario = $user['password'];
-$id_usuario = $user['foto'];
+$nombres = $user['nombre'];
+$password = $user['password'];
+$foto = $user['foto'];
 
 
 }
@@ -40,6 +39,9 @@ else if ($tipo == 'VENTAS'){
 }
 else if ($tipo == 'ADMINISTRADOR'){
     $urlViews = URL_VIEWS;
+    $imageUser =$foto;
+    $userLogueado =$nombres;
+    $menuMain = $con->getMenuMain();
     require('../Views/Wellcome.php');
 }
 
